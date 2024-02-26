@@ -17,4 +17,6 @@ This project was really fun and easy and I reccomend building a mineseaper clone
 Things needed for the projects
   - Raylib (https://github.com/raysan5/raylib)
   - C compiler
-  - 
+
+# Tools I used
+  - Visual Studio 2022
