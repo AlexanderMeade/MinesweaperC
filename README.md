@@ -1,9 +1,9 @@
-# Mine sweaper In C using Raylib
+# Mine sweeper In C using Raylib
 
 This code implements
   - Simple GUI
-  - Minesweaper gameplay
-  - Minesweaper Flag {shift+click}
+  - Minesweeper gameplay
+  - Minesweeper Flag {shift+click}
   - GameLog 
 
 # Overview
