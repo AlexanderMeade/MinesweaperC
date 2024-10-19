@@ -18,9 +18,7 @@ Things needed for the projects
   - Raylib (https://github.com/raysan5/raylib)
   - C compiler
 
-# Tools I used
-  - Visual Studio 2022
-
+# Compiling
 ```bash
 
   gcc ./main.c -o main -raylib
