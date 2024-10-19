@@ -1,16 +1,16 @@
 #include "./GameGrid.h"
 #include <stdlib.h>
-
-
+#include <time.h>
+#include <stdio.h>
 
 void GameGrid_init(GameGrid* gameGrid) {
 
-	gameGrid->grid = (Cell***)calloc(1, sizeof(Cell**)*gameGrid->height);
+	gameGrid->grid = (Cell***)malloc(sizeof(Cell**)*gameGrid->height);
 	gameGrid->isAlive = 1;
 	SetRandomSeed(time(NULL));
 
 	for (int i = 0; i < gameGrid->width; i++) {
-		gameGrid->grid[i] = (Cell**)calloc(1, gameGrid->width * sizeof(Cell*));
+		gameGrid->grid[i] = (Cell**)malloc(gameGrid->width * sizeof(Cell*));
 	}
 	
 }
@@ -134,7 +134,6 @@ void GameGrid_revealSquares(GameGrid *gameGrid, int x, int y) {
 	gameGrid->grid[y][x]->color = GRAY;
 
 	if (gameGrid->grid[y][x]->isBomb) {
-		printf("DIE");
 		GameGrid_onDeath(gameGrid);
 		return;
 	}
@@ -142,7 +141,6 @@ void GameGrid_revealSquares(GameGrid *gameGrid, int x, int y) {
 	if (gameGrid->grid[y][x]->count != 0)
 		return;
 
-	printf("\nPOINT (%d, %d)\n--------------------------\n", x, y);
 	for (int i = y - 1; i <= y + 1; i++) {
 		for (int j = x - 1; j <= x + 1; j++) {
 			
@@ -169,3 +167,22 @@ void GameGrid_revealSquares(GameGrid *gameGrid, int x, int y) {
 	
 	
 }
+
+void GameGrid_draw(GameGrid* gameGrid) {
+    for (int i = 0; i < gameGrid->height; i++) {
+        for (int j = 0; j < gameGrid->width; j++) {
+            Cell_draw(gameGrid->grid[i][j]); 
+        }    
+    }
+}
+
+void GameGrid_preFree(GameGrid* gameGrid) {
+	for (int i = 0; i < gameGrid->height; i++) {
+		for (int j = 0; j < gameGrid->width; j++) {
+		    free(gameGrid->grid[i][j]);	
+		}
+        free(gameGrid->grid[i]);
+	}
+    free(gameGrid->grid);
+}
+

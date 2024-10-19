@@ -1,24 +1,26 @@
 #include <raylib.h>
 #include <stdio.h>
-#include "./GameGrid.h"
-#include "./Button.h"
+#include "./GameGrid.c"
+#include "./Button.c"
+#include "./Cell.c"
+
+#define SCREEN_WIDTH 600
+#define SCREEN_HEIGHT 600
 
 void checkForCollision(GameGrid *gameGrid) {
+    //get mouse coords
     int mouseX = GetMouseX();
     int mouseY = GetMouseY();
-
+    //iterate through each cell in the gameGrid
     for (int i = 0; i < gameGrid->height; i++) {
- 
-
         for (int j = 0; j < gameGrid->width; j++) {
-         
             if (Cell_isWithin(gameGrid->grid[i][j], GetMouseX(), GetMouseY(), 3, 3)) {
-                printf("Cell (%d, %d), Point (%d, %d)\n", gameGrid->grid[i][j]->worldX, gameGrid->grid[i][j]->worldY, mouseX, mouseY);
+                //on left shift key press call the flag squre function which will then check for collision detectin between the mouse click point and the rect of the cell.
                 if (IsKeyDown( KEY_LEFT_SHIFT)) {
                     GameGrid_flagSquare(gameGrid, j, i);
                     return;
                 }
-
+                //if it's there's no addition keys being pressed then call the reveal squares function which will check for collision between the mouse click point and the rect of the cell.
                 GameGrid_revealSquares(gameGrid, j, i);
                 return;
             }
@@ -37,14 +39,14 @@ void gameStart(GameGrid *gameGrid) {
 
 int main() {
 
-
+    //creates a Color struct on the stack.
     Color Dark_Green = { 20, 160, 133, 255 };
 
+    //creats our restart button on the stack.
     Button restartButton = {"restart"};
+    //initilizes values like world position and size.
     Button_init(&restartButton, (Vector2) { 0, 0 }, (Vector2){40,40});
-
-    const int screenWidth = 600;
-    const int screenHeight = 600;
+    
     int ball_x = 100;
     int ball_y = 100;
     int ball_speed_x = 5;
@@ -55,39 +57,19 @@ int main() {
 
     gameStart(&gameGrid);
 
-    printf("\n");
-    printf("\n\n\n\nGRI\n\n\n");
-    for (int i = 0; i < gameGrid.height; i++) {
-        for (int j = 0; j < gameGrid.width; j++) {
-            printf("%d", gameGrid.grid[i][j]->count);
-        }
-        printf("\n");
-    }
-
-    InitWindow(screenWidth, screenHeight, "MineSweeper :3");
+    InitWindow(SCREEN_WIDTH, SCREEN_WIDTH, "MineSweeper :3");
     SetTargetFPS(60);
-
-
+ 
     double time_passed = 0;
     double delta_time = 0;
 
 
-
     while (!WindowShouldClose()) {
-
-        BeginDrawing();
-        ClearBackground(Dark_Green);
+        BeginDrawing(); //needed to render with raylib
+        ClearBackground(Dark_Green); //
         
 
-        for (int i = 0; i < gameGrid.height; i++) {
-            for (int j = 0; j < gameGrid.width; j++) {
- 
-                Cell_draw(gameGrid.grid[i][j]);
-                
-            }
-        
-        }
-
+        GameGrid_draw(&gameGrid);
         
 
         if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
@@ -101,10 +83,6 @@ int main() {
             if (gameGrid.isAlive) {
                 checkForCollision(&gameGrid);
 
-                if (GameGrid_checkWin(&gameGrid)) {
-                    printf("\nWIN");
-                }
-                printf("\n(%d, %d)", GetMouseX(), GetMouseY());
             }
         }
         Button_draw(&restartButton);
@@ -112,5 +90,9 @@ int main() {
 
         EndDrawing();
     }
-
+    
+    //free memory
+    GameGrid_preFree(&gameGrid);
+    //free((&restartButton)->text);// segfauts for some reason
 }
+

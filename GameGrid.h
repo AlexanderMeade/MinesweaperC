@@ -43,4 +43,5 @@ void GameGrid_flagSquare(GameGrid* gameGrid, int x, int y);
 
 void GameGrid_revealSquares(GameGrid* gameGrid, int x, int y);
 
+void GameGrid_preFree(GameGrid* gameGrid);
 #endif

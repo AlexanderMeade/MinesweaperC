@@ -1,0 +1,152 @@
+
+
+
+BOOGIE
+
+
+
+
+GRI
+
+
+233443100
+234553211
+222232211
+112121211
+111022200
+111011100
+000011100
+000000000
+000000000
+INFO: Initializing raylib 5.0
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 2560 x 1600
+INFO:     > Screen size:  600 x 600
+INFO:     > Render size:  600 x 600
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 226
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   Mesa
+INFO:     > Renderer: llvmpipe (LLVM 18.1.8, 128 bits)
+INFO:     > Version:  4.5 (Core Profile) Mesa 24.2.3-arch1.1
+INFO:     > GLSL:     4.50
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+Cell (346, 100), Point (384, 136)
+
+POINT (0, 6)
+--------------------------
+
+POINT (1, 6)
+--------------------------
+
+POINT (2, 6)
+--------------------------
+
+POINT (3, 5)
+--------------------------
+
+POINT (3, 4)
+--------------------------
+
+POINT (3, 6)
+--------------------------
+
+POINT (2, 7)
+--------------------------
+
+POINT (1, 7)
+--------------------------
+
+POINT (0, 7)
+--------------------------
+
+POINT (0, 8)
+--------------------------
+
+POINT (1, 8)
+--------------------------
+
+POINT (2, 8)
+--------------------------
+
+POINT (3, 7)
+--------------------------
+
+POINT (4, 7)
+--------------------------
+
+POINT (5, 7)
+--------------------------
+
+POINT (6, 7)
+--------------------------
+
+POINT (7, 6)
+--------------------------
+
+POINT (7, 5)
+--------------------------
+
+POINT (7, 4)
+--------------------------
+
+POINT (8, 4)
+--------------------------
+
+POINT (8, 5)
+--------------------------
+
+POINT (8, 6)
+--------------------------
+
+POINT (7, 7)
+--------------------------
+
+POINT (8, 7)
+--------------------------
+
+POINT (7, 8)
+--------------------------
+
+POINT (6, 8)
+--------------------------
+
+POINT (5, 8)
+--------------------------
+
+POINT (4, 8)
+--------------------------
+
+POINT (3, 8)
+--------------------------
+
+POINT (8, 8)
+--------------------------
+
+(384, 136)

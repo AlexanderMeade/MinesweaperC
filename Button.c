@@ -1,6 +1,7 @@
 #include "./Button.h"
 #include <raylib.h>
 #include <string.h>
+#include <stdlib.h>
 
 void Button_init(Button *button, Vector2 pos, Vector2 size) {
 	button->pos = pos;
@@ -18,4 +19,9 @@ int Button_wasClicked(Button* button, Vector2 pos, Vector2 size) {
 void Button_draw(Button *button) {
 	DrawRectangle(button->pos.x , button->pos.y, button->size.x, button->size.y, GRAY);
 	DrawText(button->text, button->pos.x+8, button->pos.y, 30, BLACK);
+}
+
+void Button_preFree(Button* button) {
+    if (button->text)
+        free(button->text);
 }

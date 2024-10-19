@@ -16,4 +16,6 @@ int Button_wasClicked(Button *button, Vector2 pos, Vector2 size);
 
 void Button_draw(Button* button);
 
+void Button_preFree(Button* button);
+
 #endif
