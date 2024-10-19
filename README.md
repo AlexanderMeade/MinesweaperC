@@ -20,3 +20,9 @@ Things needed for the projects
 
 # Tools I used
   - Visual Studio 2022
+
+```bash
+
+  gcc ./main.c -o main -raylib
+
+```
